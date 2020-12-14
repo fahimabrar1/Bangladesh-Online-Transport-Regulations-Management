@@ -39,60 +39,19 @@
 </nav>
    
    
+<!-- Body -->   
    
 
-<div class="d-flex justify-content-center">
-   <div class="container mt-5">
-    <!--Search Bar -->
-    <form class="form-inline mb-1">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> 
+        
+<div class="container p-3 mt-5 border d-flex justify-content-center rounded">
+    <div class="d-flex">
+       <img src="../imgaes/dashboard-bg.jpg" width="200" height="200" class="rounded-circle" alt="Cinque Terre">
+   </div>
+</div>
+
         
 
-  
-<!--Search Result Table Bar -->
 
-<div class="container p-3 my-3 border scrollable">
- 
-  <table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Driver</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col" class="d-flex justify-content-around">Go To Profile</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td colspan="3" >Mark</td>
-      <td class="d-flex justify-content-around">
-          <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>
-    </tr>
-
-    <tr>
-      <th scope="row">2</th>
-      <td  colspan="3"  >Jacob</td>
-      <td class="d-flex justify-content-around">
-        <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>   
-     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="3" >Larry</td>
-      <td class="d-flex justify-content-around">
-         <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>
-    </tr>
-    
-    
-  </tbody>
-  </table>
-
-</div>
-  </div>
-</div>
                        
                           
                                 
