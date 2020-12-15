@@ -18,24 +18,25 @@
 <!--Nav Bar -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">BOTRM</a>
+    <a class="navbar-brand mr-5" href="#"><h1>BOTRM</h1></a>
       
       
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   
-   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav d-flex justify-content-end">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+       <div class="container-fluid d-flex justify-content-end">
+            <div class="navbar-nav">
    
-       <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">About Us</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
-      <a class="nav-item nav-link" href="#">Login</a>
-    
+               <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
+               <a class="nav-item nav-link" href="#">About Us</a>
+               <a class="nav-item nav-link" href="#">Contact</a>
+               <a class="nav-item nav-link" href="#">Login</a>
+
+            </div>
+       </div>
     </div>
-  </div>
-  
 </nav>
    
    
@@ -43,12 +44,43 @@
    
 
         
-<div class="container p-3 mt-5 border d-flex justify-content-center rounded">
-    <div class="d-flex">
+<div class="container p-3 mt-5 border rounded">
+
+  <div class="container-fluid d-flex justify-content-center">
        <img src="../imgaes/dashboard-bg.jpg" width="200" height="200" class="rounded-circle" alt="Cinque Terre">
    </div>
-</div>
-
+  <div class="container-fluid">
+        <hr class="m-4" style="height=1px;color:gray;background-color:gray">
+  </div>
+   
+   <div class="container-fluid m-4 row">
+            <div class="col">
+                <div class="container-fluid row">
+                   <div class="col-sm-6">
+                       <h5>Drivers' Name : </h5>
+                   </div>
+                   <div class="col-sm-6">
+                       <h5>Fahim Abrar</h5>
+                   </div>
+               </div>
+               <div class="container-fluid row">
+                   <div class="col-sm-6">
+                       <h5>Date Of Birth : </h5>
+                   </div>
+                   <div class="col-sm-6">
+                       <h5>12/06/1996</h5>
+                   </div>
+               </div>
+            </div>
+            <div class="col">
+                <div class="container-fluid">
+                  <div class=" col-sm-11 d-flex justify-content-end">
+                        <a type="button" class="btn btn-danger text-white col-6" >File A Case</a>
+                  </div>
+               </div>
+            </div>
+       </div>
+   </div>
         
 
 

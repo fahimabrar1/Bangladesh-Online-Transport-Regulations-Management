@@ -18,7 +18,7 @@
 <!--Nav Bar -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">BOTRM</a>
+    <a class="navbar-brand mr-5" href="#"><h1>BOTRM</h1></a>
       
       
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,15 +26,17 @@
   </button>
   
    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav d-flex justify-content-end">
-   
-       <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">About Us</a>
-      <a class="nav-item nav-link" href="#">Contact</a>
-      <a class="nav-item nav-link" href="#">Login</a>
-    
-    </div>
-  </div>
+        <div class="container-fluid d-flex justify-content-end">
+            <div class="navbar-nav ">
+
+              <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">About Us</a>
+              <a class="nav-item nav-link" href="#">Contact</a>
+              <a class="nav-item nav-link" href="#">Login</a>
+
+            </div>
+        </div>
+   </div>
   
 </nav>
    
