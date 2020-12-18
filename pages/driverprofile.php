@@ -1,4 +1,13 @@
 <!doctype html>
+<?php
+    require_once("../php/connect.php");
+?>
+<?php
+    require_once("../php/GetUserData.php");
+?>
+<?php
+    require_once("../php/GetVehiclesData.php");
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -60,15 +69,23 @@
                        <h5>Drivers' Name : </h5>
                    </div>
                    <div class="col-sm-6">
-                       <h5>Fahim Abrar</h5>
+                       <h5>
+                           <?php
+                                echo $DriverName;
+                           ?>
+                       </h5>
                    </div>
                </div>
                <div class="container-fluid row">
                    <div class="col-sm-6">
-                       <h5>Date Of Birth : </h5>
+                       <h5>Mobile Number : </h5>
                    </div>
                    <div class="col-sm-6">
-                       <h5>12/06/1996</h5>
+                       <h5>
+                          <?php
+                                echo $MobileNum;
+                           ?> 
+                       </h5>
                    </div>
                </div>
             </div>
@@ -83,36 +100,16 @@
    </div>
 
 <div class="container p-3 mt-2 d-flex justify-content-center"><h1>VEHICLES</h1></div>                
+<!-- Vehicles Section -->
+<div class="Vehicle">
+   <?php
+          while ($Vehiclerow = pg_fetch_assoc($vehicledata)) {
+          getVehicle($Vehiclerow['vehicletype'],$Vehiclerow['platenumber']);      
+        }
+        
+    ?>
+    </div>
 
-<div class="container p-3 mt-2 border rounded">
-       <div class="row">
-             <div class="col">
-                <div class="container-fluid">
-                  <div class=" col-sm-12 d-flex justify-content-end">
-                        <a type="button" class="btn btn-danger text-white col-3 p-2 mb-2" >File A Case</a>
-                  </div>
-                </div>   
-             </div>
-            
-               <div class="container-fluid row">
-                   <div class="col-sm-6">
-                       <h5>Vehicle Type : </h5>
-                   </div>
-                   <div class="col">
-                       <h5>Motor-Bike</h5>
-                   </div>
-               </div>
-               <div class="container-fluid row">
-                   <div class="col-sm-6">
-                       <h5>Vehicle Number : </h5>
-                   </div>
-                   <div class="col">
-                       <h5>HA-12-12-12</h5>
-                   </div>
-               </div>
-               
-        </div>
-</div>
 
                        
                           

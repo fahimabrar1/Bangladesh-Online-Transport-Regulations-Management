@@ -1,4 +1,16 @@
 <!doctype html>
+
+<?php
+    require_once("../php/connect.php");
+?>
+<?php
+    require_once("../php/submit.php");
+?>
+<?php
+    require_once("../php/SearchResult_Template.php");
+?>
+
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -41,14 +53,15 @@
 </nav>
    
    
-   
+<!--Search Bar -->
+
 
 <div class="d-flex justify-content-center">
    <div class="container mt-5">
     <!--Search Bar -->
-    <form class="form-inline mb-1">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline mb-1" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <input name="platenumber" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" maxlength="6" minlength="6" required>
+        <button name="search" class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
     </form> 
         
 
@@ -68,26 +81,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td colspan="3" >Mark</td>
-      <td class="d-flex justify-content-around">
-          <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>
-    </tr>
-
-    <tr>
-      <th scope="row">2</th>
-      <td  colspan="3"  >Jacob</td>
-      <td class="d-flex justify-content-around">
-        <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>   
-     </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="3" >Larry</td>
-      <td class="d-flex justify-content-around">
-         <a type="button" class="btn btn-danger text-white" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php" >Go To Profile</a></td>
-    </tr>
-    
+       
+     <?php 
+        if (isset($_POST['search'])) {
+            search();
+        }
+      ?>
     
   </tbody>
   </table>
