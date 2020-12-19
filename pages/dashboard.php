@@ -4,7 +4,7 @@
     require_once("../php/connect.php");
 ?>
 <?php
-    require_once("../php/submit.php");
+    require_once("../php/search.php");
 ?>
 <?php
     require_once("../php/SearchResult_Template.php");
