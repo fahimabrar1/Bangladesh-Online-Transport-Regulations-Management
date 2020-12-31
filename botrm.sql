@@ -66,7 +66,7 @@ CREATE TABLE "Police"(
 
 
 INSERT INTO "User"(DriverLicenseNo,Name,Age,Sex,MobileNumber,Address)
-VALUES('JSC100000000001','Fahim Abrar',24,'Male','01687058140','Dhanmondi'),
+VALUES('JSC100000000001','Fahim Abrar',24,'Male','01687056140','Dhanmondi'),
 ('JSC100000000002','Nahid Molla',23,'Male','01687058140','Dhanmondi'),
 ('JSC100000000003','Hasibul Alam',28,'Male','01737800250','Mirpur'),
 ('JSC100000000004','Nusrat Zahan',23,'Female','01624964778','Farmgate'),

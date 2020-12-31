@@ -1,5 +1,4 @@
  <?php 
-        echo "Submit PHP ";
     
         function search(){
     	  	$PlateNumber=$_POST['platenumber'];
@@ -7,7 +6,6 @@
     		
     		if ($result = pg_query($query)) 
             {
-				echo "Searched Successuful ";
                 if(pg_affected_rows($result) >0 )
                 {
                     $val = pg_fetch_array($result);
