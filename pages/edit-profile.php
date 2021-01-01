@@ -1,3 +1,11 @@
+<!doctype html>
+<?php
+    require_once("../php/connect.php");
+?>
+<?php
+    require_once("../php/updateprofile.php");
+?>
+
 <html>
 
 <head>
@@ -53,15 +61,16 @@
                     <h1>You can only change your picture,Phone number, pssword and e-mail</h1>
                     <div class="form-groups">
                         <h3>Change your profile picture:</h3>
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post" enctype="multipart/form-data">
                             <h4>Select Image File to Upload:</h4>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="validatedCustomFile">
-                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                <input name="EIMG" type="file" class="custom-file-input" id="getuserimage">
+                                <label class="custom-file-label" for="getuserimage">Choose file...</label>
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
 
-                            <button type="button" class="btn btn-primary mt-1">
+
+                            <button name="UIMG" type="submit" class="btn btn-primary mt-1">
                                 Upload
                             </button>
 
@@ -133,6 +142,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
 
 </body>
 

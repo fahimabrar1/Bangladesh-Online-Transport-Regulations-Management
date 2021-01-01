@@ -16,6 +16,7 @@ CREATE TABLE "User"(
     Sex text,
     MobileNumber numeric(11,0),
     Address text,
+    ImgData BYTEA,
     PRIMARY KEY(DriverID)
 );
 
@@ -81,25 +82,29 @@ VALUES('JSC100000000001','Fahim Abrar',24,'Male','01687056140','Dhanmondi'),
 ('JSC100000000013','Masud Ahmed',36,'Male','01734490288','Taltola');	   
 	   
 INSERT INTO "Vehicle"(DriverID,PlateNumber,VehicleType)
-VALUES(1,'408111','MotorBike'),
-      (1,'401235','MotorBike'),
-      (2,'401236','Car'),
-      (3,'402356','Car'),
-      (4,'405678','MotorBike'),
-      (5,'407890','Bus'),
-      (6,'401234','Car'),
-      (6,'401123','Car'),
-      (7,'401112','Car'),
-      (8,'401122','MotorBike'),
-      (8,'408122','MotorBike'),
-      (9,'402234','Car'),
-      (9,'402223','MotorBike'),
-      (10,'402333','Car'),	
-      (11,'403344','Car'),
-      (11,'403334','MotorBike'),
-      (12,'404456','MotoBike'),
-      (13,'405667','Car'),
-      (13,'408779','MotorBike');
+VALUES(1,'408111','MotorBike'),         /*Vehicle ID = 1 */
+      (1,'401235','MotorBike'),         /*Vehicle ID = 2 */
+      (2,'401236','Car'),               /*Vehicle ID = 3 */
+      (3,'402356','Car'),               /*Vehicle ID = 4 */
+      (4,'405678','MotorBike'),         /*Vehicle ID = 5 */
+      (5,'407890','Bus'),               /*Vehicle ID = 6 */
+      (6,'401234','Car'),               /*Vehicle ID = 7 */
+      (6,'401123','Car'),               /*Vehicle ID = 8 */
+      (7,'401112','Car'),               /*Vehicle ID = 9 */
+      (8,'401122','MotorBike'),         /*Vehicle ID = 10 */
+      (8,'408122','MotorBike'),         /*Vehicle ID = 11 */
+      (9,'402234','Car'),               /*Vehicle ID = 12 */
+      (9,'402223','MotorBike'),         /*Vehicle ID = 13 */
+      (10,'402333','Car'),	            /*Vehicle ID = 14 */
+      (11,'403344','Car'),              /*Vehicle ID = 15 */
+      (11,'403334','MotorBike'),        /*Vehicle ID = 16 */
+      (12,'404456','MotoBike'),         /*Vehicle ID = 17 */
+      (13,'405667','Car'),              /*Vehicle ID = 18 */
+      (13,'408779','MotorBike');        /*Vehicle ID = 19 */
 
 
-
+INSERT INTO "Case"(PlateNumber,VehicleID,"Status",Amount ,Type,"Date","Time",Note)
+VALUES  ('408111','1','inactive','5000','No Papers,No Headlights',CURRENT_DATE,CURRENT_TIME,'the driver seems to be on drugs'),
+        ('408111','1','inactive','1000','No Headlights',CURRENT_DATE,CURRENT_TIME,''),
+        ('408111','1','inactive','2000','No Papers',CURRENT_DATE,CURRENT_TIME,''),
+        ('401235','2','active','7000','No headlights',CURRENT_DATE,CURRENT_TIME,'Caught Speeding On Highway')

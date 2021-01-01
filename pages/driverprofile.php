@@ -99,7 +99,7 @@
                 <div class="col">
                     <div class="container-fluid row">
                         <div class=" col-sm-12 d-flex justify-content-end">
-                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=$DriverID">Edit Profile</a>
+                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=<?php echo $_GET['did'] ?>">Edit Profile</a>
                         </div>
                     </div>
                     <div class="container-fluid row">
@@ -118,7 +118,7 @@
         <div class="Vehicle">
             <?php
           while ($Vehiclerow = pg_fetch_assoc($vehicledata)) {
-          getVehicle($Vehiclerow['vehicletype'],$Vehiclerow['platenumber']);      
+          getVehicle($Vehiclerow['vehicletype'],$Vehiclerow['platenumber'],$Vehiclerow['vehicleid']);      
         }
         
     ?>
@@ -175,50 +175,7 @@
 
 
 
-        <!-- Modal -->
 
-        <div class="modal fade" id="ShowRecordsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Case History</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Amount Fined</th>
-                                    <th scope="col" class="d-flex justify-content-around">Note</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <div>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td colspan="1">$CaseDate</td>
-                                        <td colspan="1">$CaseStatus</td>
-                                        <td colspan="1">$Fined</td>
-                                        <td class="d-flex justify-content-around">
-                                            <button type="button" class="btn btn-primary" data-container="body" data-toggle="popover" data-placement="right" data-content="Note Is Showing!!">
-                                                Note
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </div>
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Optional JavaScript -->
