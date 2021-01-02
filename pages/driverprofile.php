@@ -63,7 +63,7 @@
         <div class=" card container p-3">
 
             <div class="container-fluid d-flex justify-content-center">
-                <img src="../imgaes/dashboard-bg.jpg" width="200" height="200" class="rounded-circle" alt="Cinque Terre">
+                <img src="<?php echo $UserDP; ?>" width="200" height="200" class="rounded-circle" alt="Cinque Terre">
             </div>
             <div class="container-fluid">
                 <hr class="m-4" style="height=1px;color:gray;background-color:gray">
@@ -104,7 +104,7 @@
                     </div>
                     <div class="container-fluid row">
                         <div class=" col-sm-12 d-flex justify-content-end">
-                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/add vehicle.php?did=$DriverID">Add Vehicle</a>
+                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/addvehiclepage.php?did=<?php echo $_GET['did'] ?>">Add Vehicle</a>
                         </div>
                     </div>
                 </div>

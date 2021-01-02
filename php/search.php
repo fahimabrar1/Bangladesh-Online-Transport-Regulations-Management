@@ -9,9 +9,9 @@
                 if(pg_affected_rows($result) >0 )
                 {
                     $val = pg_fetch_array($result);
-                    $driverid = $val[3];
+                    $driverid = $val[4];
 
-                    $query_foruser = "SELECT * FROM \"User\" WHERE driverid = $driverid";
+                    $query_foruser = "SELECT * FROM \"User\" WHERE DriverId = '$driverid'";
                     $user = pg_query($query_foruser);
                     if ($user) 
                     {  

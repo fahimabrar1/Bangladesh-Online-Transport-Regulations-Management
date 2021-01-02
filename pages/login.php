@@ -1,19 +1,16 @@
 <!doctype html>
-
 <?php
     require_once("../php/connect.php");
 ?>
 <?php
-    require_once("../php/search.php");
-?>
-<?php
-    require_once("../php/SearchResult_Template.php");
+    require_once("../php/logginIn.php");
 ?>
 
-<!doctype html>
-<html lang="en">
+<html>
 
 <head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,15 +18,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Bangladesh Online Transport Regulations And Management</title>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-
-
 <body class="thebody">
-
     <!--Nav Bar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -44,76 +40,56 @@
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="container-fluid d-flex justify-content-end">
-                <div class="navbar-nav ">
+                <div class="navbar-nav">
 
                     <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Profile</a>
                     <a class="nav-item nav-link" href="#">About Us</a>
                     <a class="nav-item nav-link" href="#">Contact</a>
-                    <?php
-                    if(isset($_SESSION["user"])){
-
-                        echo  "<a class=\"nav-item nav-link\" href=\"../php/loggingOut.php\">Logout</a>";
-                    }else{
-                        echo  "<a class=\"nav-item nav-link\" href=\"login.php\">Login</a>";
-                    }
-                    ?>
 
                 </div>
             </div>
         </div>
-
     </nav>
 
 
-    <!--Search Bar -->
 
+    <div class="container card p-5 mt-5 mb-5">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-8 ">
 
-    <div class="card container d-flex justify-content-center mt-5">
-        <div class="container mt-5">
-            <!--Search Bar -->
-            <form class="form-inline mb-1" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                <input name="platenumber" class="form-control mr-sm-2" type="number" placeholder="Search" aria-label="Search" maxlength="6" minlength="6" required>
-                <button name="search" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                    <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mobile Number</label>
+                            <input name="mobile" type="tel" maxlength="11" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile Number">
 
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
 
+                        <div class="container d-flex justify-content-end">
+                            <button name="login" type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+                    </form>
 
-            <!--Search Result Table Bar -->
-
-            <div class="container p-3 my-3 border scrollable">
-
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Driver</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" class="d-flex justify-content-around">Go To Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <?php 
-        if (isset($_POST['search'])) {
-            search();
-        }
-      ?>
-
-                    </tbody>
-                </table>
-
+                </div>
             </div>
         </div>
     </div>
 
 
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
 </body>
 
 </html>
