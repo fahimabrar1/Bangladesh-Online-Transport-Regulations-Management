@@ -2,6 +2,7 @@
 
 <?php
     require_once("../php/connect.php");
+session_start();
 ?>
 <?php
     require_once("../php/search.php");
@@ -50,7 +51,7 @@
                     <a class="nav-item nav-link" href="#">About Us</a>
                     <a class="nav-item nav-link" href="#">Contact</a>
                     <?php
-                    if(isset($_SESSION["user"])){
+                    if(!empty($_SESSION["user"])){
 
                         echo  "<a class=\"nav-item nav-link\" href=\"../php/loggingOut.php\">Logout</a>";
                     }else{

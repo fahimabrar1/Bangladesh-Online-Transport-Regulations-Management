@@ -3,13 +3,13 @@
     require_once("../php/connect.php");
 ?>
 <?php
-    require_once("../php/logginIn.php");
+    require_once("../php/loggingIn.php");
 ?>
 
 <html>
 
 <head>
-    <title>Edit Profile</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">

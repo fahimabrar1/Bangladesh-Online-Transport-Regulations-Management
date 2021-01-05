@@ -62,7 +62,7 @@ CREATE TABLE "Police"(
     "Password" text,
     Name text,
     Thana text,
-    PoliceID text,
+    PoliceID INT GENERATED ALWAYS AS IDENTITY,
     Age numeric(3,0),
     Sex text
 );
@@ -110,4 +110,10 @@ INSERT INTO "Case"(PlateNumber,VehicleID,"Status",Amount ,Type,"Date","Time",Not
 VALUES  ('408111','1','inactive','5000','No Papers,No Headlights',CURRENT_DATE,CURRENT_TIME,'the driver seems to be on drugs'),
         ('408111','1','inactive','1000','No Headlights',CURRENT_DATE,CURRENT_TIME,''),
         ('408111','1','inactive','2000','No Papers',CURRENT_DATE,CURRENT_TIME,''),
-        ('401235','2','active','7000','No headlights',CURRENT_DATE,CURRENT_TIME,'Caught Speeding On Highway')
+        ('401235','2','active','7000','No headlights',CURRENT_DATE,CURRENT_TIME,'Caught Speeding On Highway');
+
+
+
+INSERT INTO "Police"(Username,"Password",Name,Thana,Age,Sex)
+VALUES('dpol','dpol','Police','Dhanmondi',32,'Male');
+      
