@@ -8,18 +8,22 @@ echo "<script>
 
 }elseif(isset($_POST['login'])){
 
-    $mobile=$_POST['mobile'];
-    $password=$_POST['password'];
-        
-    $sql="SELECT
-        \"mobilenumber\",\"Password\",\"driverid\"
-        FROM \"User\"
-        WHERE
-        (
-        \"mobilenumber\" = '$mobile'
-        ) AND (\"Password\" = '$password')";
-    if($result = pg_query($sql))
+    
+    if(is_int($_POST['mobile']))
     {
+        $mobile=$_POST['mobile'];
+    
+        $password=$_POST['password'];
+        
+        $sql="SELECT
+            \"mobilenumber\",\"Password\",\"driverid\"
+            FROM \"User\"
+            WHERE
+            (
+            \"mobilenumber\" = '$mobile'
+            ) AND (\"Password\" = '$password')";
+        $result = pg_query($sql);
+        
         if(pg_affected_rows($result) >0 )
         {
             $row = pg_fetch_array($result);
