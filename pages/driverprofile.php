@@ -48,8 +48,14 @@
                     <a class="nav-item nav-link active" href="#">Dashboard<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">About Us</a>
                     <a class="nav-item nav-link" href="#">Contact</a>
-                    <a class="nav-item nav-link" href="#">Login</a>
+                    <?php
+                    if(!empty($_SESSION["user"])){
 
+                        echo  "<a class=\"nav-item nav-link\" href=\"../php/loggingOut.php\">Logout</a>";
+                    }else{
+                        echo  "<a class=\"nav-item nav-link\" href=\"login.php\">Login</a>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -96,18 +102,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="container-fluid row">
-                        <div class=" col-sm-12 d-flex justify-content-end">
-                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=<?php echo $_GET['did'] ?>">Edit Profile</a>
+                <?php
+                
+                if($_SESSION["userType"]=="Driver")
+                {
+                  echo "<div class=\"col\">
+                    <div class=\"container-fluid row\">
+                        <div class=\" col-sm-12 d-flex justify-content-end\">
+                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=";
+                    echo $_GET['did'];
+                    echo ">Edit Profile</a>
                         </div>
                     </div>
-                    <div class="container-fluid row">
-                        <div class=" col-sm-12 d-flex justify-content-end">
-                            <a type="button" class="btn btn-outline-danger col-4 p-2 mb-2" target="_blank" href="http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/addvehiclepage.php?did=<?php echo $_GET['did'] ?>">Add Vehicle</a>
+                    <div class=\"container-fluid row\">
+                        <div class=\" col-sm-12 d-flex justify-content-end\">
+                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/addvehiclepage.php?did=";
+                    echo $_GET['did'];
+                    echo ">Add Vehicle</a>
                         </div>
                     </div>
-                </div>
+                </div>";   
+                }
+                
+                ?>
+
             </div>
         </div>
 

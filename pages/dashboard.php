@@ -2,7 +2,6 @@
 
 <?php
     require_once("../php/connect.php");
-session_start();
 ?>
 <?php
     require_once("../php/search.php");

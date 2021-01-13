@@ -18,14 +18,17 @@
      echo "<div class=\"card container p-3 mt-2 border rounded\">
        <div class=\"row\">
              <div class=\"col\">
-                <div class=\"container-fluid\">
-                  <div class=\" col-sm-12 d-flex justify-content-end\">
+                <div class=\"container-fluid\">";
+            if($_SESSION["userType"]=="Police")
+            {
+            echo  "<div class=\" col-sm-12 d-flex justify-content-end\">
                         <a type=\"button\" class=\"btn btn-primary text-white col-3 p-2 mb-2\" data-toggle=\"modal\" data-target=\"#FileACaseModal\" >File A Case</a>
                   </div>
                   <div class=\" col-sm-12 d-flex justify-content-end\">
                         <a type=\"button\" class=\"btn btn-primary text-white col-3 p-2 mb-2\" data-toggle=\"modal\" data-target=\"#ShowRecordsModal$VId\" >Show Case Records</a>
-                  </div>
-                </div>   
+                  </div>";
+             }
+            echo    "</div>   
              </div>
             
                <div class=\"container-fluid row\">

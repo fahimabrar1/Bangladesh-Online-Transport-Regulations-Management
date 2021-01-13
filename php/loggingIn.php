@@ -1,7 +1,6 @@
 <?php 
 
 
-session_start();
 if(isset($_SESSION['user'])){
 echo "<script>
     location.href = '../pages/dashboard.php'
@@ -33,6 +32,7 @@ echo "<script>
                 if($row['driverid'])
                 {
                     $_SESSION["user"]=$row['driverid'];
+                    $_SESSION["userType"]="Driver";
                     echo "<script>location.href='../pages/dashboard.php'</script>";   
                 }
             }
@@ -61,6 +61,7 @@ echo "<script>
                 if($row['policeid'])
                 {    
                     $_SESSION["user"]=$row['policeid'];
+                    $_SESSION["userType"]="Police";
                     echo "<script>location.href='../pages/dashboard.php'</script>";
                 }
             }
