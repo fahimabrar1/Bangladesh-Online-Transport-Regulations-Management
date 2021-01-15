@@ -9,8 +9,10 @@ echo "<script>
 }elseif(isset($_POST['login'])){
 
     
-    if(is_int($_POST['mobile']))
+    if(validate_mobile($_POST['mobile']))
     {
+        
+        echo "In User";
         $mobile=$_POST['mobile'];
     
         $password=$_POST['password'];
@@ -22,10 +24,12 @@ echo "<script>
             (
             \"mobilenumber\" = '$mobile'
             ) AND (\"Password\" = '$password')";
+        
         $result = pg_query($sql);
         
         if(pg_affected_rows($result) >0 )
         {
+            echo "exe";
             $row = pg_fetch_array($result);
 
             $storemobile = $row['mobilenumber'];
@@ -37,6 +41,7 @@ echo "<script>
                 {
                     $_SESSION["user"]=$row['driverid'];
                     $_SESSION["userType"]="Driver";
+                    echo $row['driverid'];
                     echo "<script>location.href='../pages/dashboard.php'</script>";   
                 }
             }
@@ -66,10 +71,24 @@ echo "<script>
                 {    
                     $_SESSION["user"]=$row['policeid'];
                     $_SESSION["userType"]="Police";
+                    echo $row['policeid'];
                     echo "<script>location.href='../pages/dashboard.php'</script>";
                 }
             }
         }
+    }
+}
+function validate_mobile($mobile)
+{
+    if(preg_match('/^[0-9]{10}+$/', $mobile))
+    {
+        return preg_match('/^[0-9]{10}+$/', $mobile);
+        
+    }else if(preg_match('/^[0-9]{11}+$/', $mobile))
+    {
+        return preg_match('/^[0-9]{11}+$/', $mobile);
+    }else{
+            return 0;
     }
 }
 ?>

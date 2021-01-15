@@ -68,44 +68,67 @@
     <!--Search Bar -->
 
 
-    <div class="card container d-flex justify-content-center mt-5">
-        <div class="container mt-5">
+    <?php
+        if(!empty($_SESSION["userType"]) && $_SESSION["userType"]=="Police")
+        {
+                    
+        echo " 
+    <div class=\"card container d-flex justify-content-center mt-5\">
+        <div class=\"container mt-5\">
             <!--Search Bar -->
-            <form class="form-inline mb-1" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-                <input name="platenumber" class="form-control mr-sm-2" type="number" placeholder="Search" aria-label="Search" maxlength="6" minlength="6" required>
-                <button name="search" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            <!--Search Result Table Bar -->
+            
+            <form class=\"form-inline mb-1\" method=\"post\" action=\"".$_SERVER["PHP_SELF"]."\">
+                <input name=\"platenumber\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"Search\" aria-label=\"Search\" maxlength=\"6\" minlength=\"6\" required>
+                <button name=\"search\" class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Search</button>
             </form>
 
 
 
-            <!--Search Result Table Bar -->
+           
+                   <div class=\"container p-3 my-3 border scrollable\">
 
-            <div class="container p-3 my-3 border scrollable">
-
-                <table class="table table-striped table-hover">
+                <table class=\"table table-striped table-hover\">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Driver</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col" class="d-flex justify-content-around">Go To Profile</th>
+                            <th scope=\"col\">#</th>
+                            <th scope=\"col\">Driver</th>
+                            <th scope=\"col\"></th>
+                            <th scope=\"col\"></th>
+                            <th scope=\"col\" class=\"d-flex justify-content-around\">Go To Profile</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                        <?php 
-        if (isset($_POST['search'])) {
-            search();
-        }
-      ?>
-
-                    </tbody>
+                    <tbody>"; 
+                     if (isset($_POST['search'])) {
+                         search();
+                     }
+                    echo "</tbody>
                 </table>
 
             </div>
+            </div>
+    </div>";
+            
+        }else{
+                    
+            $query = "SELECT * FROM \"User\" WHERE \"driverid\" =".$_SESSION["user"];
+            if ($result = pg_query($query)) 
+            {
+                if(pg_affected_rows($result) >0 )
+                {
+                    $val = pg_fetch_array($result);
+                     $DriverID = $val[0];
+                    
+                    echo "<div class=\"card container d-flex justify-content-center mt-5\">
+        <div class=\"container mt-5\">
+            <a type=\"button\" class=\"btn btn btn-danger col-4 p-2 mb-2\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/driverprofile.php?did=$DriverID \">Go To Profile</a>
         </div>
     </div>
+";
+                }
+            }
+        }
+            ?>
 
 
 

@@ -6,7 +6,7 @@
     		
     		if ($result = pg_query($query)) 
             {
-                if(pg_affected_rows($result) >0 )
+                if(pg_affected_rows($result) > 0 )
                 {
                     $val = pg_fetch_array($result);
                     $driverid = $val[4];

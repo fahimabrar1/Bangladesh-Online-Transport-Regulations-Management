@@ -47,6 +47,7 @@ CREATE TABLE "Case"(
     CaseNo INT GENERATED ALWAYS AS IDENTITY,
     PlateNumber numeric(6,0),
     VehicleID INT,
+    RedeemCode text,
     "Status" text,
     Amount numeric(10,0),
     Type text,
@@ -110,11 +111,11 @@ VALUES(1,'408111','MotorBike'),         /*Vehicle ID = 1 */
       (13,'408779','MotorBike');        /*Vehicle ID = 19 */
 
 
-INSERT INTO "Case"(PlateNumber,VehicleID,"Status",Amount ,Type,"Date","Time",Note)
-VALUES  ('408111','1','inactive','5000','No Papers,No Headlights',CURRENT_DATE,CURRENT_TIME,'the driver seems to be on drugs'),
-        ('408111','1','inactive','1000','No Headlights',CURRENT_DATE,CURRENT_TIME,''),
-        ('408111','1','inactive','2000','No Papers',CURRENT_DATE,CURRENT_TIME,''),
-        ('401235','2','active','7000','No headlights',CURRENT_DATE,CURRENT_TIME,'Caught Speeding On Highway');
+INSERT INTO "Case"(PlateNumber,VehicleID,RedeemCode,"Status",Amount ,Type,"Date","Time",Note)
+VALUES  ('408111','1','1122334455667788','inactive','5000','No Papers,No Headlights',CURRENT_DATE,CURRENT_TIME,'the driver seems to be on drugs'),
+        ('408111','1','1222334455667788','inactive','1000','No Headlights',CURRENT_DATE,CURRENT_TIME,''),
+        ('408111','1','1112334455667788','inactive','2000','No Papers',CURRENT_DATE,CURRENT_TIME,''),
+        ('401235','2','1132334455667788','active','7000','No headlights',CURRENT_DATE,CURRENT_TIME,'Caught Speeding On Highway');
 
 
 

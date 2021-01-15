@@ -106,19 +106,16 @@
                 
                 if($_SESSION["userType"]=="Driver")
                 {
+                    $did = $_GET['did'];
                   echo "<div class=\"col\">
                     <div class=\"container-fluid row\">
                         <div class=\" col-sm-12 d-flex justify-content-end\">
-                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=";
-                    echo $_GET['did'];
-                    echo ">Edit Profile</a>
+                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/edit-profile.php?did=$did\">Edit Profile</a>
                         </div>
                     </div>
                     <div class=\"container-fluid row\">
                         <div class=\" col-sm-12 d-flex justify-content-end\">
-                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/addvehiclepage.php?did=";
-                    echo $_GET['did'];
-                    echo ">Add Vehicle</a>
+                            <a type=\"button\" class=\"btn btn-outline-danger col-4 p-2 mb-2\" target=\"_blank\" href=\"http://localhost/Bangladesh-Online-Transport-Regulations-Management/pages/addvehiclepage.php?did=$did\">Add Vehicle</a>
                         </div>
                     </div>
                 </div>";   
@@ -142,54 +139,8 @@
     ?>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="FileACaseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">File A Case</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group ">
-                                <div class="container">
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>Select Type of Cases</label>
-                                            <div class="multi_select_box ">
-                                                <select class="multi_select d-flex justify-content-center" multiple>
-                                                    <option value="CakePHP">Headlight</option>
-                                                    <option value="Laravel">Fitness Paper</option>
-                                                    <option value="YII">Bike Paper</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <label>Fine Amount</label>
-                                            <div class="multi_select_box ">
-                                                <input type="number" class="form-control" id="inputPassword4" placeholder="Amount">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Note</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
 
