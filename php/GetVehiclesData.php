@@ -21,8 +21,12 @@ if(!empty($_GET['did']))
     
     function getVehicle($VType,$VPlateNum,$VId){
      
-        
-     echo "<div class=\"card container p-3 mt-2 border rounded\">
+    echo "<div class=\"card container p-3 mt-2 border rounded\"";
+    if(checkforcase($VPlateNum))
+    {
+        echo "style=\"background-color:#ff3232;\"";
+    }    
+    echo ">
        <div class=\"row\">
              <div class=\"col\">
                 <div class=\"container-fluid\">";
@@ -294,5 +298,20 @@ VALUES  ('$VPlateNum','$VId','$uniqueid','active','$caseamount','$case',CURRENT_
       }
     }
     
+    function checkforcase($VId)
+    {
+        $query_forcasesearch = "SELECT * FROM \"Case\" WHERE platenumber = '$VId'";
+        $casedata  = pg_query($query_forcasesearch);
+      
+      while ($CaseRow = pg_fetch_assoc($casedata))
+      {
+          if($CaseRow['Status']=="active")
+          {
+              return true;
+          }
+      }
+        return false;
+    }
+
     
 ?>
